@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-mail-Chatter-topbar')]" position="after">
+            <div t-if="state.thread.pinnedMessages.length > 0" class="o-mail-Chatter-pinnedMessages px-3">
+                <div class="o-mail-Chatter-pinnedSeparator my-2 d-flex align-items-center justify-content-center text-uppercase fw-bold small text-muted">
+                    <span class="flex-grow-1 border-bottom me-2"/>
+                    <span>Pinned</span>
+                    <span class="flex-grow-1 border-bottom ms-2"/>
+                </div>
+                <MessageCardList messages="state.thread.pinnedMessages" mode="'card'" thread="state.thread" />
+            </div>
+        </xpath>
+    </t>
+</templates>
